@@ -1,0 +1,33 @@
+{
+  "name": "culture-dao",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "docker:build": "docker -f docker/culture-dao/Dockerfile .",
+    "docker:up": "docker-compose up -d",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "test": "echo testing..."
+  },
+  "dependencies": {
+    "next": "14.0.1",
+    "pm2": "^5.3.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "husky": "^8.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
