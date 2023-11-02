@@ -93,6 +93,7 @@ The available scopes are:
 client
 server
 gha
+config
 workspace
 ```
 
