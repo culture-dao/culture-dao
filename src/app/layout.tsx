@@ -4,13 +4,12 @@ import './globals.css'
 import BottomNav from '@/components/BottomNav'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Footer from '@/components/Footer'
-import { SLOGAN, TITLE } from '@/config/contants'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: `${TITLE} | ${SLOGAN}`,
-  description: SLOGAN,
+  title: `Culture DAO`,
+  description: 'slogan',
 }
 
 export default function RootLayout({
