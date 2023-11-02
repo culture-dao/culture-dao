@@ -94,6 +94,7 @@ client
 server
 gha
 config
+build
 workspace
 ```
 
