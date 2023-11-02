@@ -8,18 +8,15 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
-  FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
 const formSchema = z.object({
   email: z.string().min(2, {
-    message: "Please enter an Email Address",
-  }).email('Please enter a valid Email Address.'),
+    message: "Please enter an email address",
+  }).email('Please enter a valid email address'),
 })
 
 export default function Newsletter() {
@@ -32,32 +29,32 @@ export default function Newsletter() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     alert(`You have submitted: ${values.email}`)
+    form.reset()
   }
 
   return (
-    <footer className='flex flex-col gap-8 justify-center items-center py-12'>
-      <h2 className='uppercase'>Stay Updated - Join Our Mailing List</h2>
+    <section className='flex flex-col gap-8 justify-center items-center py-32'>
+      <h2 className='uppercase text-2xl text-center md:text-left'>Stay Updated - Join Our Mailing List</h2>
       <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email Address</FormLabel>
-              <FormControl>
-                <Input placeholder="name@email.com" className='w-60' {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                We will never share your Email Address with anyone.
-              </FormDescription> */}
-              <FormMessage className='text-red-400' />
-            </FormItem>
-          )}
-        />
-        <Button variant={'outline'} type="submit">Submit</Button>
-      </form>
-    </Form>
-    </footer>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <div className='relative flex flex-col justify-center items-center w-80 h-12'>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <>
+                  <FormControl>
+                    <Input placeholder='name@email.com' className='h-12 ring-1' {...field} />
+                  </FormControl>
+                  <FormMessage className='absolute top-16 text-red-400' />
+                </>
+              )}
+            />
+            <Button type="submit" className='absolute right-1 h-10'>Subscribe</Button>
+          </div>
+          <FormMessage className='text-destructive' />
+        </form>
+      </Form>
+    </section>
   )
 }

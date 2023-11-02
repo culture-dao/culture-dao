@@ -4,20 +4,24 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image'
 
 export default function Hero() {
-  const { theme } = useTheme();
-  
+  const { theme } = useTheme();  
   const blurImage = `blur-image-${theme == 'light' ? 'light' : 'dark'}`;
+  const blurBottom = `blur-bottom-${theme == 'light' ? 'light' : 'dark'}`;
 
   return (
-    <div className={`w-full h-screen flex justify-center items-center overflow-hidden relative bg-black ${blurImage}`}>
-      <div className='flex justify-center items-center w-full'>
+    <header className='relative flex flex-col justify-center items-center w-full'>
+      <div className={blurImage}>
         <Image
+          className=''
           src={`/images/new-hero.webp`}
           alt="Hero Image"
-          className="opacity-60 object-cover"
-          fill
+          loading='eager'
+          width={1920}
+          height={960}
+          fetchPriority='high'
         />
       </div>
-    </div>
+      <div className={blurBottom} />
+    </header>
   )
 }
