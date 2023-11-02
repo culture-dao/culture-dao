@@ -1,4 +1,4 @@
-name: [PROD] Deploy Culture DAO website
+name: Deploy Culture DAO website [PROD]
 
 env:
   - NODE_VERSION='16.17.1'
