@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "precommit": "commitlint --from=HEAD",
     "test": "echo testing..."
   },
   "dependencies": {
