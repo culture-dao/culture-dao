@@ -3,7 +3,8 @@
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 
-import { BASE_URL } from '@/config/contants'
+//import { BASE_URL } from '@/config/contants'
+const BASE_URL = 'https://kyle-eastcode.github.io/culture-dao'
 
 export default function Hero() {
   const { theme } = useTheme()
