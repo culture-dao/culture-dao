@@ -74,7 +74,7 @@ feat(website): created new notification banner
 
 The available types are:
 
-```bash
+```
 build: Changes that affect the build system or external dependencies
 chore: Updating a script, task, location of a file, or something that's a nuisance
 ci: Changes to our CI configuration files and scripts
@@ -89,20 +89,10 @@ test: Adding missing tests or correcting existing tests
 
 The available scopes are:
 
-```bash
-common
-dao
-engine-room
-gmp
-galaxy
-infra
-portal
-reactkit
-release
-rpc-proxy
-serum-vial-provider
-sol-tools
-starcomm
+```
+client
+server
+gha
 workspace
 ```
 
