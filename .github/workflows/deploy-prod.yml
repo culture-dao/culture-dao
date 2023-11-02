@@ -1,7 +1,7 @@
 name: Deploy Culture DAO website [PROD]
 
 env:
-  - NODE_VERSION='16.17.1'
+  node-version: 16.17.1
 
 on:
   # Runs on pushes targeting the default branch
@@ -50,7 +50,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "$NODE_VERSION"
+          node-version: ${{ env.node-version }}
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
