@@ -12,6 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { RevealWrapper, RevealList } from 'next-reveal'
 
 const formSchema = z.object({
   email: z.string().min(2, {
@@ -34,32 +35,36 @@ export default function Newsletter() {
 
   return (
     <section className='flex flex-col gap-8 justify-center items-center py-32'>
-      <div className='flex flex-col text-center md:flex-row md:text-left'>
-        <h3 className='uppercase text-2xl text-center md:text-left'>Stay Updated</h3>
-        <div className='mx-2 text-2xl hidden md:block'>{' - '}</div>
-        <div className='my-1 md:hidden'></div>
-        <h3 className='uppercase text-2xl text-center md:text-left'>Join Our Mailing List</h3>
-      </div>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className='relative flex flex-col justify-center items-center w-80 h-12'>
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <>
-                  <FormControl>
-                    <Input placeholder='name@email.com' className='h-12 ring-1' {...field} />
-                  </FormControl>
-                  <FormMessage className='absolute top-16 text-red-400' />
-                </>
-              )}
-            />
-            <Button type="submit" className='absolute right-1 h-10'>Subscribe</Button>
+        <RevealWrapper delay={150} desktop={false}>
+          <div className='flex flex-col text-center md:flex-row md:text-left mb-24'>
+            <h3 className='uppercase text-2xl text-center md:text-left'>Stay Updated</h3>
+            <div className='mx-2 text-2xl hidden md:block'>{' - '}</div>
+            <div className='my-1 md:hidden'></div>
+            <h3 className='uppercase text-2xl text-center md:text-left'>Join Our Mailing List</h3>
           </div>
-          <FormMessage className='text-destructive' />
-        </form>
-      </Form>
-    </section>
+        </RevealWrapper>
+        <RevealWrapper delay={150}>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <div className='relative flex flex-col justify-center items-center w-80'>
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <>
+                      <FormControl>
+                        <Input placeholder='name@email.com' className='pr-32 h-12 ring-1' {...field} />
+                      </FormControl>
+                      <FormMessage className='absolute top-16 text-red-400' />
+                    </>
+                  )}
+                />
+                <Button type="submit" className='absolute right-1 h-10'>Subscribe</Button>
+              </div>
+              <FormMessage className='text-destructive' />
+            </form>
+          </Form>
+        </RevealWrapper>
+      </section>
   )
 }
