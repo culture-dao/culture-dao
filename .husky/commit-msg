@@ -1,8 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# run linting
-yarn lint
-
-# run tests
-yarn test
+yarn run precommit
