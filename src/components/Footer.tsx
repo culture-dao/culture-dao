@@ -2,7 +2,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className='flex flex-col gap-8 justify-center items-center py-12'>
+    <footer className='flex flex-col gap-8 justify-center items-center py-24'>
       <div className='text-6xl'>🌍</div>
       <div className='flex flex-col text-center md:flex-row md:text-left'>
         <p>&#169; Culture DAO {year}</p>

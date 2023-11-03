@@ -34,7 +34,12 @@ export default function Newsletter() {
 
   return (
     <section className='flex flex-col gap-8 justify-center items-center py-32'>
-      <h2 className='uppercase text-2xl text-center md:text-left'>Stay Updated - Join Our Mailing List</h2>
+      <div className='flex flex-col text-center md:flex-row md:text-left'>
+        <h3 className='uppercase text-2xl text-center md:text-left'>Stay Updated</h3>
+        <div className='mx-2 text-2xl hidden md:block'>{' - '}</div>
+        <div className='my-1 md:hidden'></div>
+        <h3 className='uppercase text-2xl text-center md:text-left'>Join Our Mailing List</h3>
+      </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className='relative flex flex-col justify-center items-center w-80 h-12'>

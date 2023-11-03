@@ -10,7 +10,6 @@ export default function Hero() {
   const { theme } = useTheme()
   const blurImage = `blur-image-${theme == 'light' ? 'light' : 'dark'}`
   const blurBottom = `blur-bottom-${theme == 'light' ? 'light' : 'dark'}`
-  const heroImage = `${BASE_URL}/images/new-hero.webp`
 
   return (
     <header className='relative flex flex-col justify-center items-center w-full'>
